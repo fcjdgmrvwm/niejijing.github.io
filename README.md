@@ -22,3 +22,7 @@ a只能绑定example.com吗？
 不过我发现，阿里云的www.example.com会自动转向example.com，如果example.com有定义的话。也有可能是www.example.com->niejijing.github.io->example.com，而不是阿里云搞得鬼。至于到底是什么需要做实验，但是由于DNS解析存在缓存延迟，所以会比较蛋疼。而且，一旦绑定了域名，niejijing.github.io也会跳转到example.com（如果你在niejijing.github.io里面设置的是example.com的话）。
 
 目前看来，无论是a还是cname，在niejijing.github.io这个源里面生成的还是CNAME文件。
+
+## 解析优先级
+
+https://niejijing.github.io解析niejijing.github.io里的源没有错，但是包括其他项目的源也是通过这个域名解析，比如我又一个源
