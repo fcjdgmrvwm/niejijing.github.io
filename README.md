@@ -25,4 +25,4 @@ a只能绑定example.com吗？
 
 ## 解析优先级
 
-https://niejijing.github.io解析niejijing.github.io里的源没有错，但是包括其他项目的源也是通过这个域名解析，比如我又一个源
+https://niejijing.github.io解析niejijing.github.io里的源没有错，但是包括其他项目的源也是通过这个域名解析，比如我有一个源叫math，然后niejijing.github.io这个源里面有个文件夹叫math，这会产生冲突，这时候github是这样解决的，如果math源开通了项目github page，那么只解析这个源里面的内容，忽视math文件夹下的内容，否则会解析math文件夹内的内容。
