@@ -1,6 +1,16 @@
 # niejijing.github.io
 homepage.
 
+## 相似服务
+
+由于github page走红（本质上是抄袭wordpress的，但是加入了git源的灵活性），国内的代码托管如码云、码市也推出了pages服务。码云还有动态Pages功能，基本相当于一台基于git的虚拟主机了，很有特色！
+
+这种类型的托管服务云计算公司也有推出，如openstack，firebase
+
+虽然总是有各种限制，但是基本让国内不能搭梯子的个人VPS活不下去了。不过有一点很奇怪，国内的VPS基本指虚拟主机，国外的VPS却可以自己装系统？
+
+讲道理，我自己的虚拟主机已经很久没有使用了，论灵活度显然好于github pages，但是为什么我对github pages更有好感呢？不过不管怎么样，github我肯定是经常使用的，虚拟主机只是偶尔想起来才会用。
+
 ## 建立github page
 
 申请个人主页，只能有一个，但是项目主页无数。个人主页对应github源username.github.io(niejijing.github.io)，然后项目主页就是usename.github.io/repository，个人主页是niejijing.github.io.
