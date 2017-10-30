@@ -49,7 +49,16 @@ https://niejijing.github.io解析niejijing.github.io里的源没有错，但是�
 
 1. 给js、css、img等资源加上版本号，强迫Chrome更新页面（网页资源的不同的版本号会提示Chrome页面发生了改动）
 
-2. 设置meta属性。
+   例如
+
+   ```html
+   <img src='lala?v1.0' />
+   ```
+
+   ​
+
+
+1. 设置meta属性。
 
    ```html
    <HEAD>    
@@ -78,4 +87,22 @@ jekyll 官方推荐静态网页生成工具
 ### git源即是一个网站目录
 
 很明显地，git源就是一个网站目录，每个目录都可以通过git管理，实现本地和云端的完全同步，而且整个网站是模块化的管理，非常方便。
+
+### 使用markdown就可以编写网站
+
+只要你选择了theme（或者在源里面创建_config.yml，然后设置theme字段），那么github就会通过jekyll来从markdown中自动生成页面。
+
+你也可以本地自己通过jekyll生成静态页面，然后通过git源上传。毕竟，github原生的主题并不总是如人意。
+
+### github page就是一个虚拟主机
+
+很明显，github page是github主机上的一个目录，也就是虚拟主机，但是github不会为它提供cgi，也不会加载形如.htaccess文件等。
+
+## jekyll
+
+github page在_config.yml失效导致构建jekyll失败的时候，会返回以前缓存成功的页面，并且这个缓存会保持相当长的一段时间，直到最新一次成功的构建到来。
+
+### 坑
+
+如何解决Chrome缓存github page的问题？因为github page是静态页面。但是我决不总是Chrome的问题，考虑到jekyll存在缓存机制，因此很难迅速更新页面，如果你使用的是github上面的theme的话。果然，经过我测试，发现果然是github page缓存机制导致的问题，而不是chrome的锅，因为当内容确实发生改变的时候，chrome不会使用本地缓存页面（除非你没有使用服务器，只是在本地写了一个html和css，那么就没有服务器通知chrome重新加载新页面的机制了）。
 
