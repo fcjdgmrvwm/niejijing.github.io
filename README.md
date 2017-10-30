@@ -29,6 +29,8 @@ https://niejijing.github.io解析niejijing.github.io里的源没有错，但是�
 
 上述内容已经过测试。
 
+另外，只有niejijing.github.io根目录下的index.html会被自动解析，子目录下的不会被自动解析。
+
 ## 网站托管
 
 ### 静态页面
