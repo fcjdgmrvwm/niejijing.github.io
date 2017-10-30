@@ -26,3 +26,35 @@ a只能绑定example.com吗？
 ## 解析优先级
 
 https://niejijing.github.io解析niejijing.github.io里的源没有错，但是包括其他项目的源也是通过这个域名解析，比如我有一个源叫math，然后niejijing.github.io这个源里面有个文件夹叫math，这会产生冲突，这时候github是这样解决的，如果math源开通了项目github page，那么只解析这个源里面的内容，忽视math文件夹下的内容，否则会解析math文件夹内的内容。
+
+上述内容已经过测试。
+
+## 网站托管
+
+### 静态页面
+
+很不幸地，github page只支持静态页面，html+css+js，不支持php等（php文件会被下载），所以需要防止静态页面被Chrome缓存。
+
+一段存疑的说明：
+
+> 请求一个静态文件浏览器会发出对应的请求头
+>
+> 该文件HASH不存在浏览器缓存中，而服务器又有存在这个文件则 浏览器下载这个文件，这是返回代码是200
+>
+> 如果HASH存在，则请求头会发送一个文件创建有时间，而这个时间和服务器上这个文件创建时间一直， 则返回代码304，浏览器读取本地文件
+
+不过常用的方法有：
+
+1. 给js、css、img等资源加上版本号，强迫Chrome更新页面（网页资源的不同的版本号会提示Chrome页面发生了改动）
+
+2. 设置meta属性。
+
+   ```html
+   <HEAD>    
+     <META   HTTP-EQUIV="Pragma"   CONTENT="no-cache">    
+     <META   HTTP-EQUIV="Cache-Control"   CONTENT="no-cache">    
+     <META   HTTP-EQUIV="Expires"   CONTENT="0">    
+   </HEAD>  
+   ```
+
+   ​
