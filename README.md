@@ -98,11 +98,9 @@ jekyll 官方推荐静态网页生成工具
 
 很明显，github page是github主机上的一个目录，也就是虚拟主机，但是github不会为它提供cgi，也不会加载形如.htaccess文件等。
 
-## jekyll
+## jekyll缓存
 
 github page在_config.yml失效导致构建jekyll失败的时候，会返回以前缓存成功的页面，并且这个缓存会保持相当长的一段时间，直到最新一次成功的构建到来。
-
-### 坑
 
 如何解决Chrome缓存github page的问题？因为github page是静态页面。但是我决不总是Chrome的问题，考虑到jekyll存在缓存机制，因此很难迅速更新页面，如果你使用的是github上面的theme的话。果然，经过我测试，发现果然是github page缓存机制导致的问题，而不是chrome的锅，因为当内容确实发生改变的时候，chrome不会使用本地缓存页面（除非你没有使用服务器，只是在本地写了一个html和css，那么就没有服务器通知chrome重新加载新页面的机制了）。
 
