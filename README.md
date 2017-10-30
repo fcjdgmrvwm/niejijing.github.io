@@ -112,10 +112,25 @@ github page在_config.yml失效导致构建jekyll失败的时候，会返回以�
 
 那么如果目录下存在index.md，又会如何？index.md > README.md.
 
+那么index.md和index.html的顺序又如何？感觉像是那个先来，就以哪个为主。
+
+还能做哪些测试？
+
+
+
+我发现由于github page的延迟，这些结论都很难一定保证正确，好难受，懒得搞了。
+
 
 
 
 
 ## test
 
+### 1
+
 [math readme](math/README.md)
+
+这个链接的测试结果告诉我们：
+
+https://niejijing.github.io解析niejijing.github.io里的源没有错，但是包括其他项目的源也是通过这个域名解析，比如我有一个源叫math，然后niejijing.github.io这个源里面有个文件夹叫math，这会产生冲突，这时候github是这样解决的，如果math源开通了项目github page，那么只解析这个源里面的内容，忽视math文件夹下的内容，否则会解析math文件夹内的内容。
+
