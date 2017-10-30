@@ -29,7 +29,7 @@ https://niejijing.github.io解析niejijing.github.io里的源没有错，但是�
 
 上述内容已经过测试。
 
-另外，只有niejijing.github.io根目录下的index.html会被自动解析，子目录下的不会被自动解析。项目主页根目下的index.html也不会被自动解析。
+~~另外，只有niejijing.github.io根目录下的index.html会被自动解析，子目录下的不会被自动解析。项目主页根目下的index.html也不会被自动解析。~~   会自动解析的，只是github page有延迟罢了。
 
 ## 网站托管
 
@@ -104,3 +104,10 @@ github page在_config.yml失效导致构建jekyll失败的时候，会返回以�
 
 如何解决Chrome缓存github page的问题？因为github page是静态页面。但是我决不总是Chrome的问题，考虑到jekyll存在缓存机制，因此很难迅速更新页面，如果你使用的是github上面的theme的话。果然，经过我测试，发现果然是github page缓存机制导致的问题，而不是chrome的锅，因为当内容确实发生改变的时候，chrome不会使用本地缓存页面（除非你没有使用服务器，只是在本地写了一个html和css，那么就没有服务器通知chrome重新加载新页面的机制了）。
 
+### 坑
+
+我们直到在niejijing.github.io下面必须要有index.html，其他项目主页是不需要index.html，因为jekyll的readme插件会自动将md文件转换成html，把README.md转换成index.html，并且，当index.html和README.md同时存在是，优先解析index.html。那么当index.html不存在的时候，解析README.md
+
+如果a项目主页下存在b.md，那么我们可以niejijing.github.io/b.html访问，也可以使用niejijing.github.io/b.md访问，不过后者之前访问md文件内容，前者返回经过kekyll渲染后的页面。但是不存在README.html，这一点请注意。
+
+那么如果目录下存在index.md，又会如何？
